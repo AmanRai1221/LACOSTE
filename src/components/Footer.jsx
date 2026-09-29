@@ -34,8 +34,8 @@ export default function Footer() {
         {/* Links Section */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-24">
           <div>
-            <a href="#" className="text-2xl font-editorial font-bold tracking-widest inline-block mb-8">
-              L'ELEGANCE
+            <a href="#" className="inline-block mb-8 transition-transform duration-300 hover:scale-105">
+              <img src="/logo.png" alt="Logo" className="h-8 md:h-12 w-auto object-contain" />
             </a>
             <div className="flex space-x-6 text-xs font-semibold tracking-widest">
               <a href="#" className="text-lacoste-white/70 hover:text-lacoste-white transition-colors">INSTAGRAM</a>

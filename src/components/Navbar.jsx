@@ -29,11 +29,15 @@ export default function Navbar() {
           
           {/* Logo */}
           <div className="flex-shrink-0 z-50">
-            <a href="#" className={cn(
-              "text-2xl font-editorial font-bold tracking-widest transition-colors duration-300",
-              isScrolled || isMobileMenuOpen ? "text-lacoste-green" : "text-lacoste-white"
-            )}>
-              L'ELEGANCE
+            <a href="#" className="block transition-transform duration-300 hover:scale-105">
+              <img 
+                src="/logo.png" 
+                alt="Logo" 
+                className={cn(
+                  "h-8 md:h-12 w-auto object-contain transition-all duration-300",
+                  (isScrolled || isMobileMenuOpen) && "brightness-0"
+                )}
+              />
             </a>
           </div>
 

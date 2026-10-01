@@ -1,16 +1,35 @@
-# React + Vite
+# Lacoste (Lct) Premium Web Experience
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A high-end, dynamic, and aesthetic web application built to showcase the heritage and elegance of Lacoste. This project focuses on delivering a cinematic user experience through modern web technologies, smooth scrolling, and advanced animations.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Premium UI/UX**: Designed with a focus on modern luxury aesthetics, typography, and clean layouts.
+- **Dynamic Animations**: Powered by `framer-motion` and `gsap` for staggered text reveals, hover effects, and page transitions.
+- **Smooth Scrolling**: Implemented using `lenis` for buttery-smooth, momentum-based scrolling.
+- **Parallax Effects**: Rich scroll-linked parallax animations on images and floating UI cards.
+- **Responsive Layouts**: Fully responsive design tailored for mobile, tablet, and desktop viewing.
 
-## React Compiler
+## 🛠️ Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19**: Core framework.
+- **Vite**: Ultra-fast build tool and development server.
+- **Tailwind CSS (v4)**: Utility-first CSS framework for rapid UI styling.
+- **Framer Motion & GSAP**: Advanced animation libraries.
+- **Lenis**: Smooth scroll management.
+- **Lucide React**: Beautiful, consistent iconography.
 
-## Expanding the Oxlint configuration
+## 📁 Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- `src/components/` - Contains the reusable UI components (Hero, Navbar, BrandHeritage, CollectionGrid, etc.).
+- `public/` - Contains static assets like the `icon.jpg` Lacoste logo.
+- `index.html` - The main entry point.
+- `src/App.jsx` - The root React component orchestrating the layout and scroll effects.
+
+## 🎨 Design Philosophy
+
+The project embraces a premium web design standard featuring:
+- **Glassmorphism**: Subtle frosted glass effects on floating UI cards and badges.
+- **Cinematic Overlays**: Deep gradients blending with high-quality fashion imagery.
+- **Editorial Typography**: Large, bold headings mixed with elegantly tracked-out sans-serif text.
+- **Micro-interactions**: Thoughtful button hover states, smooth scaling, and rotating badges to make the interface feel alive.

@@ -56,9 +56,9 @@ export default function ScrollFrameAnimation() {
       // Reset initial state
       gsap.set(el, { opacity: 0, y: 50 });
 
-      // Animate based on total progress using timeline
-      tl.to(el, { opacity: 1, y: 0, duration: step * 0.2, ease: "power2.out" }, startFadeIn * tl.duration() || 0)
-        .to(el, { opacity: 0, y: -50, duration: step * 0.2, ease: "power2.in" }, startFadeOut * tl.duration() || 0.1); // Small offset to avoid 0 duration
+      // Animate based on total progress using timeline mapping time to fixed absolute values 0 to 1
+      tl.to(el, { opacity: 1, y: 0, duration: step * 0.2, ease: "power2.out" }, startFadeIn)
+        .to(el, { opacity: 0, y: -50, duration: step * 0.2, ease: "power2.in" }, startFadeOut);
     });
     
     return () => {
@@ -89,13 +89,17 @@ export default function ScrollFrameAnimation() {
       {/* Canvas Layer */}
       <canvas 
         ref={canvasRef} 
-        className="w-full h-screen block pointer-events-none"
+        className="w-full h-screen block pointer-events-none object-cover"
       />
+
+      {/* Overlay to improve text legibility */}
+      <div className="absolute inset-0 bg-black/40 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-lacoste-dark/80 via-transparent to-lacoste-dark/30 pointer-events-none" />
 
       {/* Text Overlay Layer */}
       <div 
         ref={textContainerRef}
-        className="absolute inset-0 w-full h-screen pointer-events-none flex items-center justify-center"
+        className="absolute inset-0 w-full h-screen pointer-events-none flex items-center justify-center px-4"
       >
         {scenes.map((scene, i) => (
           <div 
@@ -103,11 +107,11 @@ export default function ScrollFrameAnimation() {
             className="absolute text-center flex flex-col items-center pointer-events-auto"
             style={{ opacity: 0 }}
           >
-            <h2 className="text-4xl md:text-6xl lg:text-8xl text-lacoste-white font-editorial tracking-tight drop-shadow-lg">
+            <h2 className="text-5xl md:text-7xl lg:text-9xl text-lacoste-white font-editorial tracking-tighter font-medium" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.5)' }}>
               {scene.text}
             </h2>
             {scene.hasCTA && (
-              <button className="mt-8 border border-lacoste-white text-lacoste-white px-8 py-4 text-sm tracking-widest hover:bg-lacoste-white hover:text-lacoste-dark transition-colors duration-300">
+              <button className="mt-12 border border-lacoste-white/50 text-lacoste-white px-10 py-5 text-sm tracking-widest hover:bg-lacoste-white hover:text-lacoste-dark transition-all duration-500 backdrop-blur-sm bg-black/10">
                 DISCOVER THE COLLECTION
               </button>
             )}
